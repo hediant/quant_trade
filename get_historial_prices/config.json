@@ -1,0 +1,16 @@
+{
+	"stockcodes" : "/home/invest/stock/cn/stockcode/all.json",
+	"historial_prices_path" : "/home/invest/stock/historial/",
+	"day" : "day/",
+	"tasks" : "tasks/",
+	"ignore" : "ignore/",
+	"last_update" : "last_update.txt",
+	"max_parallel_tasks" : 10,
+	"proxy" : {
+		"enabled" : false,
+		"sock5" : {
+			"proxyHost": "localhost",
+			"proxyPort": 1080		
+		} 
+	}
+}
