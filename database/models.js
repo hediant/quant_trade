@@ -9,7 +9,7 @@ module.exports = {
 			"start_date" : { "alias":"start_date"},
 			"end_date" : { "alias":"end_date"},
 			"label" : { "alias":"label" },
-			"reason" : { "alias":"reason"},
+			"reason" : { "alias":"reason" },
 			"enabled" : { "alias":"enabled" },
 			"level" :{"alias":"level"},
 			"create_time" : { "alias":"create_time", "readonly":true, "auto":true }
