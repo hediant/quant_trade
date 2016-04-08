@@ -1,0 +1,9 @@
+{
+	"ces" : {
+		"addr":"localhost",
+		"auth_pass":null,
+		"port":6379,
+		"send" : "sub_channel",
+		"listen" : "pub_channel"		
+	}
+}
