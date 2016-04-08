@@ -7,7 +7,7 @@ var sortBy = require('sort-array');
 var config = require('./config');
 var stockcode = require('./stockcode');
 var yahoo_api = require('../lib/yahoo_finance_api');
-var holidays = require('./holidays');
+var holidays = require('../lib/holidays');
 
 function TaskMgr(){
 	var tasks_ = [];

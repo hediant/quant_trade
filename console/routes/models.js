@@ -23,6 +23,7 @@ module.exports = function (router){
 	for (var name in models){
 		var route_path = base_ + name;
 
+		// get object
 		var get_path = route_path + "/:id";
 		router.get(get_path, function (req, res, next){
 			var dbhelper = new DbHelper(global.DbConnection);
@@ -34,6 +35,7 @@ module.exports = function (router){
 			});
 		});
 
+		// create object
 		var post_path = route_path;
 		router.post(post_path, function (req, res, next){
 			var dbhelper = new DbHelper(global.DbConnection);
@@ -45,6 +47,7 @@ module.exports = function (router){
 			});			
 		});
 
+		// set object
 		var put_path = route_path + "/:id";
 		router.put(get_path, function (req, res, next){
 			var dbhelper = new DbHelper(global.DbConnection);
@@ -56,6 +59,7 @@ module.exports = function (router){
 			});	
 		});	
 
+		// delete object
 		var del_path = route_path + "/:id";
 		router.delete(del_path, function (req, res, next){
 			var dbhelper = new DbHelper(global.DbConnection);
@@ -104,6 +108,7 @@ module.exports = function (router){
 			})		
 		});
 
+		// query objects with conditions
 		router.get(route_path, function (req, res, next){
 			var dbhelper = new DbHelper(global.DbConnection);
 			dbhelper.getConnection(function (err, connection){
