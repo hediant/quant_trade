@@ -3,9 +3,9 @@
 //
 var SlidingWindow = require('./slidingwindow');
 
-function SlidingCountWindow(topic, count){
+function SlidingCountWindow(count){
 	// base
-	SlidingWindow.call(this, topic);
+	SlidingWindow.call(this);
 	this.count_ = count || 3;	// 默认是3个值
 
 	// init
@@ -22,7 +22,7 @@ SlidingCountWindow.prototype.init = function() {
 // 
 // 滑动计数器窗口(从父类继承)
 //
-SlidingCountWindow.prototype.slide = function(topic, fields, timestamp) {
+SlidingCountWindow.prototype.slide = function(fields, timestamp) {
 	if (!fields)
 		return;
 	this.slidingCount_(fields, this.count_, timestamp);

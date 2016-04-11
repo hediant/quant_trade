@@ -3,9 +3,9 @@
 //
 var SlidingWindow = require('./slidingwindow');
 
-function SlidingTimeWindow(topic, period){
+function SlidingTimeWindow(period){
 	// base
-	SlidingWindow.call(this, topic);
+	SlidingWindow.call(this);
 	this.period_ = period || 5000;	// 默认是5000毫秒
 
 	// init
@@ -26,7 +26,7 @@ SlidingTimeWindow.prototype.init = function() {
 // 
 // 滑动时间窗口(从父类继承)
 //
-SlidingTimeWindow.prototype.slide = function(topic, fields, timestamp) {
+SlidingTimeWindow.prototype.slide = function(fields, timestamp) {
 	if (!fields)
 		return;
 	this.slidingTime_(fields, this.period_, timestamp);

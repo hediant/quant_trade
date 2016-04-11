@@ -6,7 +6,7 @@ var EventEmitter = require('events').EventEmitter
 	, recv_time = "recv"
 	, source_time = "source";
 
-function SlidingWindow(topic){
+function SlidingWindow(){
 	EventEmitter.call(this);
 
 	//
@@ -18,7 +18,6 @@ function SlidingWindow(topic){
 	// 		暂时没有实现，先保留
 	//
 	this.ready_ = false;
-	this.topic_ = topic;
 
 	//
 	// key - string
@@ -46,11 +45,10 @@ SlidingWindow.prototype.isReady = function(){
 
 //
 // 执行一次滑动动作
-// @topic - event topic, string
 // @fields - {key, value} pairs, object
 // [@timestamp] - 想对于1970年的毫秒数, default to current time
 //
-SlidingWindow.prototype.slide = function(topic, fields, timestamp){
+SlidingWindow.prototype.slide = function(fields, timestamp){
 	throw new TypeError('SlidingWindow is an abrtract class.');
 };
 

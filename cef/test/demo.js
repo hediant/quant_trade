@@ -17,8 +17,8 @@ function ExampleHandler (topic, broker){
 	});	
 
 	// 创建滑动时间窗口
-	this.stw_ = new STW(topic, 5*1000);
-	this.scw_ = new SCW(topic, 5);	
+	this.stw_ = new STW(5*1000);
+	this.scw_ = new SCW(5);	
 }
 require('util').inherits(ExampleHandler, BaseHandler);
 ExampleHandler.prototype.constructor = ExampleHandler;
@@ -86,8 +86,8 @@ ExampleHandler.prototype.handleEvent = function(topic, fields) {
 	// NOTE:
 	// 不要忘记实现滑动
 	//
-	this.stw_.slide(topic, fields, time.valueOf());
-	this.scw_.slide(topic, fields);
+	this.stw_.slide(fields, time.valueOf());
+	this.scw_.slide(fields);
 
 };
 
