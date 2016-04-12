@@ -21,6 +21,9 @@ module.exports = function (router){
 	}
 
 	for (var name in models){
+		if (!models[name].public)
+			continue;
+		
 		var route_path = base_ + name;
 
 		// get object

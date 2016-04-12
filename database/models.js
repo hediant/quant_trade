@@ -14,6 +14,7 @@ module.exports = {
 			"level" :{"alias":"level"},
 			"create_time" : { "alias":"create_time", "readonly":true, "auto":true }
 		}),
-		"primary_key" : "id"
+		"primary_key" : "id",
+		"public" : true
 	}
 }
