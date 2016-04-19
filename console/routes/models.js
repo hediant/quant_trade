@@ -4,11 +4,7 @@ var Model = SimpleOrm.Model;
 var DbHelper = SimpleOrm.DbHelper;
 var models = require("../../database/models");
 var Q = require("q");
-
-var escape_array = require('../utils/escape_array')
-	, prepare_options = require('../utils/prepare_options')
-	, prepare_fields = require('../utils/prepare_fields')
-	, prepare_conds = require('../utils/prepare_conds');
+var prepare_options = require('../utils/prepare_options');
 
 module.exports = function (router){
 	var base_ = "/stock/";
@@ -16,7 +12,7 @@ module.exports = function (router){
 	var response = function (res, err, results){
 		res.json({
 			"err" : err,
-			"results" : results
+			"ret" : results
 		});
 	}
 
@@ -80,7 +76,7 @@ module.exports = function (router){
 
 				Q.fcall(function (){
 					return Q.Promise(function (resolve, reject, notify){
-						mdl.get(req.params["id"], function (err, results){
+						mdl.getForUpdate(req.params["id"], function (err, results){
 							if (err)
 								reject(err);
 							else
